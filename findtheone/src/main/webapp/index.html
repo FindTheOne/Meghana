@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="Directives/login.js"> </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Find The One- eLearning platform</title>
+	<base href="${pageContext.request.contextPath}">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+
+    <link href="css/login.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-app = "myModule" ng-controller="myController">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Find the One</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <h2>What will be your next course?</h2>
+                <h3>Learn and Teach each other</h3>
+
+
+                <!-- Login/signup pop-up (modal) -->
+                <a id="modal_trigger" href="#modal" class="btn">Click here to Login or register</a>
+
+        <div id="modal" class="popupContainer" style="display:none;">
+                <header class="popupHeader">
+                        <span class="header_title">Login</span>
+                        <span class="modal_close"><i class="fa fa-times"></i></span>
+                </header>
+
+                <section class="popupBody">
+                        <!-- Social Login -->
+                        <div class="social_login">
+                                <div class="">
+                                        <a href="#" class="social_box fb">
+                                                <span class="icon"><i class="fa fa-facebook"></i></span>
+                                                <span class="icon_title">Connect with Facebook</span>
+
+                                        </a>
+
+                                        <a href="#" class="social_box google">
+                                                <span class="icon"><i class="fa fa-google-plus"></i></span>
+                                                <span class="icon_title">Connect with Google</span>
+                                        </a>
+                                </div>
+
+                                <div class="centeredText">
+                                        <span>Or use your Email address</span>
+                                </div>
+
+                                <div class="action_btns">
+                                        <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
+                                        <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
+                                </div>
+                        </div>
+
+                        <!-- Username & Password Login form -->
+                        <div class="user_login">
+                                
+                                <form class="login-form">
+                                       <label>Username</label>
+                                       <input type="text" placeholder="Username" ng-model="form.username" required/>
+                                       <br />
+
+                                       <label>Password</label>
+                                       <input type="password" placeholder="Password" ng-model="form.password" required/>
+                                       <br />
+
+                                       <div class="checkbox">
+                                               <input id="remember" type="checkbox" />
+                                               <label for="remember">Remember me on this computer</label>
+                                       </div>
+
+                                       <div class="action_btns">
+                                               <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                                               <div class="one_half last"><a href="#" class="btn btn_red" ng-click="submitDetails()">Login</a></div>
+                                       </div>
+                               </form>
+
+                                <a href="#" class="forgot_password">Forgot password?</a>
+                        </div>
+
+                        <!-- Register Form -->
+                        <div class="user_register">
+                                <form>
+                                        <label>Full Name</label>
+                                        <input type="text" />
+                                        <br />
+
+                                        <label>Email Address</label>
+                                        <input type="email" />
+                                        <br />
+
+                                        <label>Password</label>
+                                        <input type="password" />
+                                        <br />
+
+                                        <div class="checkbox">
+                                                <input id="send_updates" type="checkbox" />
+                                                <label for="send_updates">Send me occasional email updates</label>
+                                        </div>
+
+                                        <div class="action_btns">
+                                                <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                                                <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
+                                        </div>
+                                </form>
+                        </div>
+                </section>
+        </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <hr class="featurette-divider">
+
+        <!-- First Featurette -->
+        <div class="featurette" id="about">
+            <img class="featurette-image img-thumbnail img-responsive pull-right" src="css/books.jpg">
+            <h2 class="featurette-heading">Learn a Variety of courses from experienced tutors
+            </h2>
+            <p class="lead">Search for tutors across our huge pool of users which thrive to learn from one another. </p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Second Featurette -->
+        <div class="featurette" id="services">
+            <img class="featurette-image img-thumbnail img-responsive pull-left" src="css/responsive.png">
+            <h2 class="featurette-heading">Platform independent
+            </h2>
+            <p class="lead">Use Find The One service on variety of devices such as laptops, Tablets, mobiles etc.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Third Featurette -->
+        <div class="featurette" id="contact">
+            <img class="featurette-image img-thumbnail img-responsive pull-right" src="css/recommendation.jpg">
+            <h2 class="featurette-heading">Recommendation Engine
+            </h2>
+            <p class="lead">State of the art recommendation engine recommends related courses and tutors which can be helpful in learning new skills</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Find the One, E-Learning Network 2016</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+    <script type="text/javascript" src = "js/login.js"></script>
+
+</body>
+
+</html>

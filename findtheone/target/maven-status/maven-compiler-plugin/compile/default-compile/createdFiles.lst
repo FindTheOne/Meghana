@@ -1,0 +1,5 @@
+edu\sjsu\project\controller\UserController.class
+edu\sjsu\project\controller\SpringController.class
+edu\sjsu\project\dao\UserService.class
+edu\sjsu\project\dao\UserRepository.class
+edu\sjsu\project\models\User.class
