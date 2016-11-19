@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Profile</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="directives/userprofile.js"> </script>
+</head>
+<body ng-app = "userModule" ng-controller="userController">
+
+<div ng-repeat="x in message">
+	<H3> Hello, {{username}} </H3>
+	
+	<p> Email: {{x.emailID}}</p>
+	
+	<p> Interests:</p>
+	<ul>
+		<li ng-repeat="y in x.interests"> {{y}}</li>			
+	</ul>	
+	
+	<p> Skills:</p>
+	<ul>
+		<li ng-repeat="y in x.skills"> {{y}}</li>			
+	</ul>	
+
+	<p> Friends:</p>
+	<ul>
+		<li ng-repeat="y in x.friends"> {{y}}</li>			
+	</ul>	
+	
+</div>
+
+</body>
+</html>
